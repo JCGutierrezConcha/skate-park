@@ -23,7 +23,11 @@ dataForm.addEventListener("submit", async (e) => {
     const anos_experiencia = document.getElementById("data_experiencia").value
     const especialidad = document.getElementById("data_especialidad").value
 
-    if (password != password_repetida) {
+    if (!nombre || !password || !password_repetida || !anos_experiencia || !especialidad) {
+        return alert("Todos los campos son requeridos")
+    }
+
+    if (password !== password_repetida) {
         return alert('Las contraseñas no coinciden')
     }
 

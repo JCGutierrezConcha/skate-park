@@ -9,6 +9,10 @@ loginForm.addEventListener("submit", async (e) => {
     const email = loginEmail.value
     const password = loginPassword.value
 
+    if (!email || !password) {
+        return alert("Todos los campos son requeridos")
+    }
+
     try {
         const { data: token } = await axios.post("/login", { email, password })
         window.location = `/datos?token=${token}`
