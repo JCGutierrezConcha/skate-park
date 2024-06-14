@@ -1,0 +1,55 @@
+<div class="py-4">
+    <h2>Administración</h2>
+    <hr class="w-50" />
+
+    <table class="table table-dark w-50 m-auto">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Años de experiencia</th>
+                <th scope="col">Especialidad</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#if skaters}}
+
+            {{#each skaters}}
+
+            <tr>
+                <th scope="row">{{this.id}}</th>
+                <td>
+                    <div style="background-image: url({{this.foto}})"></div>
+                </td>
+                <td>{{this.nombre}}</td>
+                <td>{{this.anos_experiencia}}</td>
+                <td>{{this.especialidad}}</td>
+                {{#if estado}}
+                <td><input type="checkbox" checked class="check" id="{{this.id}}" /></td>
+                {{else}}
+                <td><input type="checkbox" class="check" id="{{this.id}}" /></td>
+                {{/if}}
+            </tr>
+
+            {{/each}}
+
+            {{/if}}
+
+        </tbody>
+    </table>
+</div>
+<p><a href="/"> Ir a Lista de Participantes</a></p>
+
+<!--Bootstrap JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+<!--Axios-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+    integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="./assets/js/admin.js"></script>
